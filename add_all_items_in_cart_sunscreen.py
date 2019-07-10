@@ -9,7 +9,7 @@ driver=webdriver.Chrome()
 driver.get("https://weathershopper.pythonanywhere.com/sunscreen")
 time.sleep(3)
 #check if have landed on the correct page
-if(driver.title=='The best moisturizers in the world!'):
+if(driver.title=='The best sunscreen in the world!'):
     print("Successfully entered the sunscreen shopping site")
 else:
     print("Failed to to enter the desired page.")
@@ -51,3 +51,4 @@ if(final_items>6):
 #check if all the items added are successfully reflects in the cart
 if(final_items==6):
     print("Successfully added items into the cart")
+    driver.close()
