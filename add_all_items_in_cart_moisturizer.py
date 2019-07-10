@@ -10,7 +10,7 @@ driver.get("https://weathershopper.pythonanywhere.com/moisturizer")
 time.sleep(3)
 #check if have landed on the correct page
 if(driver.find_element_by_xpath("//H2").text=="Moisturizers"):
-    print("Successfully entered the sunscreen shopping site")
+    print("Successfully entered the moisturizer shopping site")
 else:
     print("Failed to to enter the desired page.")
 time.sleep(2)
@@ -51,3 +51,4 @@ if(final_items>6):
 #check if all the items added are successfully reflects in the cart
 if(final_items==6):
     print("Successfully added items into the cart")
+    driver.close()
