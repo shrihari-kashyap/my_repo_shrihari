@@ -13,8 +13,9 @@ spf_50=driver.find_elements_by_xpath("//p[contains(text(),'SPF-50')]/following-s
 spf_30=driver.find_elements_by_xpath("//p[contains(text(),'SPF-30')]/following-sibling::p")
 least_sunscreen=[spf_50,spf_30]
 #find the least expensive item from spf-50 and spf-30
-min_value=10000
+
 for sun in least_sunscreen:
+    min_value=10000
     for each_element in sun:    
         price_sunscreen=int(each_element.text.split()[-1])
         if(price_sunscreen<min_value):
