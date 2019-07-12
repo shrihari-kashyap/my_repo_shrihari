@@ -9,10 +9,13 @@ driver.get("https://weathershopper.pythonanywhere.com/moisturizer")
 aloe=driver.find_elements_by_xpath("//p[contains(text(),'Aloe')]/following-sibling::p")
 almond=driver.find_elements_by_xpath("//p[contains(text(),'Almond')]/following-sibling::p")
 least_moisturizer=[almond,aloe]
+
 #find the least expensive item from aloe and almond
-min_value=10000
+
 for moist in least_moisturizer:
-    for each_element in moist:    
+    min_value=10000
+    for each_element in moist:
+        #print(each_element.text)    
         price_moisturizer=int(each_element.text.split()[-1])
         if(price_moisturizer<min_value):
             min_value=price_moisturizer
@@ -21,4 +24,4 @@ for moist in least_moisturizer:
     time.sleep(2)
     #print the name of the product and price of aloe and almond
     print("the moisturizer added to the cart is %s and its price is %d"%(driver.find_element_by_xpath("//p[contains(text(),'%d')]/preceding-sibling::p"%min_value).text,min_value))    
-    time.sleep(3)
+    time.sleep(2)
